@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 
 
@@ -21,8 +21,12 @@ const countReducer = (state = initialState, action) => {
   }
 }
 
+const rootReducer = combineReducers({
+  count: countReducer,
+  anotherValue: 100
+})
 
-const store = createStore(countReducer);
+const store = createStore(rootReducer);
 store.subscribe(() => console.log(store.getState()))
 
 const increment = () => ({ type: INCREMENT })
