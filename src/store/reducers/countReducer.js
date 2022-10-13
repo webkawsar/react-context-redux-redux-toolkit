@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, RESET } from "./action";
+import { DECREMENT, INCREMENT, RESET } from "../action";
 
 
 
